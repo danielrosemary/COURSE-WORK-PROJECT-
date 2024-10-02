@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Product Catalog</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+</nav>
+
+<section>
+    <h2>Available Products</h2>
+
+    <div class="product-list">
+        <ul>
+            <li th:each="product : ${products}">
+                <h3 th:text="${product.name}">Product Name</h3>
+                <p th:text="'Category: ' + ${product.category}">Category: Electronics</p>
+                <p th:text="'Price: $' + ${product.price}">Price: $999.99</p>
+                <p th:text="'Available Quantity: ' + ${product.quantity}">Quantity: 10</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 E-Commerce Platform</p>
+</footer>
+</body>
+</html>
